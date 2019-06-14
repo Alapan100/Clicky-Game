@@ -1,10 +1,26 @@
 import React, { Component } from "react";
+import Jleaguecard from "./Components/jleaguecard";
+import characters from "./jLeague.json";
+import Wrapper from "./Components/Wrapper"; 
 
 class App extends Component {
-   // Setting this.state.friends to the friends json array
+  state = {
+      characters
+    }
 
    render() {
-     return <h1>Hello World!</h1>
+     return (
+         <Wrapper>
+             {this.state.characters.map(character => (
+                 <Jleaguecard
+                 id={character.id}
+                 image={character.image}
+                 name={character.name}  
+                 />
+             ))}
+         </Wrapper>
+
+     )
    }
  }
 
