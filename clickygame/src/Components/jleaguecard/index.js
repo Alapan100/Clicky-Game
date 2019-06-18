@@ -3,7 +3,7 @@ import "./style.css";
 
 function Jleaguecard(props) {
   return (
-    <div className="card">
+    <div className="card" onClick={() => props.onClick(props.character)}>
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
